@@ -49,4 +49,8 @@ class MusicLibraryController
     puts "Please enter the name of a genre:"
     input = gets.chomp
     if genre = Genre.find_by_name(input)
+      sorted_songs= genre.songs.sort_by do |song|
+        song.name
+      end
+      sorted_songs.each
 end
