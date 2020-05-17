@@ -5,6 +5,9 @@ class MusicLibraryController
     file.import
   end
   
+  def call 
+    input = nil 
+    
   def list_songs
     sorted_songs = Song.all.sort_by do |song| 
       song.name 
