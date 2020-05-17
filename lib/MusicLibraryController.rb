@@ -39,7 +39,10 @@ class MusicLibraryController
   end
   
   def list_songs
-    Song.all.sort
+    sorted_songs = Song.all.sort_by do |song| 
+      song.name 
+    end 
+    sorted_songs.each
   
   
 end
