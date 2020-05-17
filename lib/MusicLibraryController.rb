@@ -15,30 +15,14 @@ class MusicLibraryController
     puts "To play a song, enter 'play song'."
     puts "To quit, type 'exit'.
     
-    input = nil
-    
-    case input 
-    
-    when "list songs"
-      list_songs 
-    when "list artists"
-      list_artists
-    when "list genres"
-      list_genres
-    when "list artist"
-      list_songs_by_artist
-    when "list genre"
-      list_songs_by_genre 
-    when "play song"
-      play_song
-    end
-  end
   
   def list_songs
     sorted_songs = Song.all.sort_by do |song| 
       song.name 
     end 
-    sorted_songs.each
+    sorted_songs.each.with_index(1) do |index, song|
+      puts 
+    end
   
   
 end
