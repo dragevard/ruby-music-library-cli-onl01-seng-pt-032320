@@ -19,7 +19,7 @@ class MusicLibraryController
       puts "To quit, type 'exit'."
       puts "What would you like to do?"
     
-      user_input = gets.strip
+      input = gets.strip
 
       case user_input
       when "list songs"
@@ -34,9 +34,9 @@ class MusicLibraryController
         list_songs_by_genre
       when "play song"
         play_song
-          end
-        end
       end
+    end
+  end
   def list_songs
     sorted_songs = Song.all.sort_by do |song| 
       song.name 
